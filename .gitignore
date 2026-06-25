@@ -1,0 +1,44 @@
+# Archivos de compilación LaTeX
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.dpth
+*.md5
+*.auxlock
+
+# Carpetas de compilación
+build/
+dist/
+_minted-*/
+
+# Editores
+.vscode/
+.texpadtmp/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.idea/
+*.iml
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Archivos temporales
+*~
+*.bak
+*.tmp
