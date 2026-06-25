@@ -68,11 +68,20 @@ Para el desarrollo del prototipo, se siguió una metodología basada en fases se
 
 \begin{itemize}
     \item \textbf{Fase 1: Levantamiento de requisitos}. Se realizaron entrevistas semiestructuradas a 2 administradores de parqueaderos para identificar las funcionalidades críticas (registro de ingreso, cálculo de tarifa y liberación de espacios).
-    \item \textbf{Fase 2: Diseño de la arquitectura}. Se definió el acoplamiento entre módulos bajo el patrón de microservicios propuesto por \textcite{Garcia2023}. El backend se diseñó en Python con FastAPI y el frontend en React Native.
+    \item \textbf{Fase 2: Diseño de la arquitectura}. Se definió el acoplamiento entre módulos bajo el patrón de microservicios propuesto por \textcite{Garcia2023}. Como parte de esta fase, se estructuró un diagrama conceptual detallado de integración de software y flujo de datos (ver Figura~\ref{fig:arquitectura}). El backend se diseñó en Python con FastAPI y el frontend en React Native.
     \item \textbf{Fase 3: Entrenamiento del modelo de IA}. Se etiquetaron manualmente 500 imágenes de vehículos en Roboflow y se entrenó el modelo YOLOv8 durante 50 épocas hasta alcanzar una precisión del 89\%.
     \item \textbf{Fase 4: Desarrollo e integración}. Se codificó el chatbot usando Rasa 3.0 y se conectó al procesador de imágenes mediante API REST. Se realizaron pruebas de integración para verificar la comunicación entre ambos.
     \item \textbf{Fase 5: Pruebas de caja negra y piloto}. Se ejecutaron pruebas funcionales con 10 casos de uso simulados antes de desplegar el sistema en el parqueadero piloto.
 \end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\singlespacing
+\includegraphics[width=0.90\textwidth]{imagenes/image1.png}
+\caption{Arquitectura de integración del prototipo inteligente de parqueaderos.}
+\label{fig:arquitectura}
+\end{figure}
+
 
 \subsection{Población, Muestra y Muestreo}
 
@@ -107,20 +116,25 @@ Los datos cuantitativos obtenidos de la matriz de pruebas y la bitácora de tiem
 Se garantizó la confidencialidad de los participantes. No se registraron nombres completos ni números de placa. Todos los usuarios firmaron un consentimiento informado donde se les notificó que los datos serían usados exclusivamente para fines académicos y que podían retirarse en cualquier momento.
 
 
-
-Como referencia técnica y para ilustrar la estructura lógica del prototipo propuesto, en la Figura~\ref{fig:arquitectura} se describe la arquitectura general de integración de componentes de software.
-
-\begin{figure}[h!]
-\centering
-\singlespacing
-\includegraphics[width=0.95\textwidth]{imagenes/image1.png}
-\caption{Arquitectura de integración del prototipo inteligente de parqueaderos.}
-\label{fig:arquitectura}
-\end{figure}
-
 \section{Resultados esperados}
 
-A continuación se detallan los resultados esperados correspondientes a cada uno de los objetivos de la investigación:
+En el ámbito de la Ingeniería de Software, los resultados esperados constituyen entregables concretos, medibles y verificables que demuestran el cumplimiento de los objetivos específicos y validan el rigor científico-técnico del proyecto de investigación. A continuación, se detalla el contenido técnico y la estructura de los resultados proyectados:
+
+\begin{itemize}
+    \item \textbf{Resultado 1: Documentación de Requerimientos (SRS)} \\
+    El primer resultado es el documento formal de Especificación de Requerimientos de Software (SRS, por sus siglas en inglés), estructurado bajo el estándar IEEE 830. Este entregable detalla de manera inequívoca los requerimientos funcionales del sistema (tales como la consulta del estado de ocupación, generación de alertas e interfaz de chatbot) y los requerimientos no funcionales críticos (incluyendo tiempo de respuesta $\le$ 2 segundos, y disponibilidad del canal conversacional).
+    
+    \item \textbf{Resultado 2: Especificación del Diseño y la Arquitectura} \\
+    Consiste en la modelación lógica de la solución. Este entregable incluye diagramas de arquitectura UML que detallan la separación de responsabilidades en microservicios, el diseño lógico y físico de la base de datos para la persistencia relacional, y los modelos del flujo dialógico que rigen el comportamiento conversacional de la interfaz de chat.
+    
+    \item \textbf{Resultado 3: Prototipo Mínimo Viable (MVP)} \\
+    Corresponde al software ejecutable final alojado en un repositorio de código fuente en GitHub. El MVP integra físicamente los tres componentes del sistema: el backend de control desarrollado en FastAPI, el módulo de visión computacional para la detección de vehículos mediante modelos YOLOv8 y la interfaz de cara al conductor a través de la API del canal de mensajería (Telegram).
+    
+    \item \textbf{Resultado 4: Informe de Evaluación y Usabilidad} \\
+    Es el documento analítico que consolida las pruebas empíricas. Detalla métricas técnicas de precisión (se proyecta un \textit{Mean Average Precision} mAP $\ge$ 90\% en condiciones variables de iluminación) y resultados de usabilidad recopilados mediante cuestionarios SUS aplicados a usuarios piloto, esperando alcanzar una puntuación global de usabilidad $\ge$ 75 (clasificada como usabilidad excelente).
+\end{itemize}
+
+Para mayor claridad conceptual, la correspondencia analítica de estos entregables se resume en la Tabla~\ref{tab:resultados}.
 
 \begin{table}[h!]
 \centering
@@ -142,6 +156,16 @@ A continuación se detallan los resultados esperados correspondientes a cada uno
 \bottomrule
 \end{tabular*}
 \end{table}
+
+\begin{center}
+\noindent\fbox{%
+    \parbox{0.95\textwidth}{%
+        \textbf{Nota guía para el estudiante (eliminar esta caja al finalizar):} \\
+        Los resultados esperados deben redactarse en términos de productos concretos (documentos, software, reportes, algoritmos). Evite frases descriptivas de actividades (como "se aprenderá a usar Python"). En su lugar, defina entregables específicos y criterios de aceptación medibles y verificables (métricas cuantitativas de precisión, latencia, usabilidad, etc.) que permitan evaluar objetivamente el éxito del proyecto.
+    }%
+}
+\end{center}
+
 
 \section{Costo estimado y financiamiento}
 
