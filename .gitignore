@@ -42,3 +42,5 @@ Thumbs.db
 *~
 *.bak
 *.tmp
+*SAVE-ERROR*
+*.SAVE-ERROR
